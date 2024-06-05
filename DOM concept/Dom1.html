@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Dom</title>
+    <style>
+        .box{
+            width: 44px;
+            height: 44px;
+            border: 2px solid rgb(172, 47, 255);
+        }
 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+        <div class="box">Box5</div>
+    </div>
+    <script>
+        document.body.style.backgroundColor="yellow"
+
+        document.body.firstElementChild //show container class
+        document.body.firstChild // #text
+        console.log(document.title)
+        document.body.childNodes // [text, div.container, text, script, text]
+
+        let con= document.body.firstElementChild
+        con.firstElementChild.style.backgroundColor="red" //first box red
+        
+        document.body.firstElementChild.children //[div.box, div.box, div.box, div.box, div.box]
+        document.body.firstElementChild.children[2].style.backgroundColor="green"
+        document.body.firstElementChild.childNodes // [text, div.box, text, div.box, text, div.box, text, div.box, text, div.box, text]
+
+    </script>
+</body>
+</html>

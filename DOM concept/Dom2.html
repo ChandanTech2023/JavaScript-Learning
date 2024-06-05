@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion and removing elenment</title>
+</head>
+<style>
+    .bg-green{
+        color: blue;
+    }
+</style>
+<body>
+    <div class="container bg-green">
+        <div class="box" style="color: red">This is a box</div>
+        <div class="boxes" data-createdby="Chandan" data-conceptby="me">This is a another box</div>
+    </div>
+ <script src="Dom2.js">
+    document.querySelector(".box") //<div class=​"box">​This is a box​</div>​
+    document.querySelector(".box").innerHTML="New name"
+    document.querySelector(".container").innerHTML //'\n  <div class="box">This is a box</div>\n    '
+    document.querySelector(".container").outerHTML
+    document.querySelector(".container").tagName//only applicable elenment
+    document.querySelector(".container").nodeName //for all like comment node,text node
+
+ </script>
+</body>
+</html>
