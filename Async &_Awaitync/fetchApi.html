@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise and Async await</title>
+</head>
+
+<body>
+    <h2>fetch() :The fetch() method used to fetch a resource. </h2>
+    <p>
+        : The Fetch API uses Request and Response objects <br>
+        Request : Represents a resource request <br>
+        Response :Represents the response to a request. <br>
+    <h3>"async and await make promises easier to write" async makes a function return a Promise and
+        await makes a function wait for a Promise</h3>
+    <!-- settle means resolve or reject
+        resolve means : promise has sattled successfully
+        reject means : promise has not satteled . -->
+
+    </p>
+    <script>
+        // Async fun means it will run in background
+        //async function getData(){ 
+        //    return new Promise((resolve ,reject)=>{
+        //        setTimeout(()=>{
+        //            resolve(223)
+        //        },3000) // means after 3sec call function 
+        //    })
+        //}
+
+        //Fetch API
+        async function getData() {
+            //Here we Simulate getting data from server
+            // let x = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+            //.then(response => response.json())
+            //.then(json => console.log(json)
+            //let data = await x.json() //Data get as json object
+            //return data
+
+
+            // Example POST method implementation:
+            let x = await fetch("https://jsonplaceholder.typicode.com/todos", {
+                method: "POST", //GET ,PUT(for update) ,DELETE ,OPTION request
+                body: JSON.stringify({
+                    userId: 1,
+                    title: "Fix my bugs",
+                    completed: false,
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                },
+            })
+            
+            //await keyword is permitted within the function body, enabling asynchronous behaviour 
+            let data = await x.json() //Data get as json object
+            return data
+        }
+        
+        //If i want to wait for async() then make another function and warp data and use await
+       async function main() {
+        
+        console.log("Loading modules")
+        console.log("Do something else")
+        console.log("Load data....")
+        
+        let data = await getData() //await only use into async fun
+        console.log(data)
+           //  console.log("Now Process data")
+        }
+         main()
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api request old method </title>
+</head>
+
+<body>
+    <h1>APIs allow two software applications to communicate using pre-established rules and protocols. The API serves
+        as a software interface for the two different applications that need to communicate.</h1>
+
+</body>
+<script>
+    //XML HTTP Request( Ajx) 
+    const requestUrl = 'https://randomuser.me/api/'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+
+    xhr.onreadystatechange = function () {
+        // readyState property return the state
+        console.log(xhr.readyState)
+        if (xhr.readyState === 3) {
+            const data = JSON.parse(this.responseText) //most of time data type in string so we convert into JSON data
+            console.log(data.results)
+        }
+    }
+    xhr.send()
+</script>
+
+</html>
