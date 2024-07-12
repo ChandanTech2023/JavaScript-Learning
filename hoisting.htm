@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //. Hoisting with Functions
+        let fun = () =>{ // Declaring
+            let name = 'Mukul';
+            console.log(name); //Output:Cannot access 'fun' before initialization
+        }
+        fun(); //Calling the expression
+        
+// JavaScript hoisting with const 
+// fun();
+// function fun(){
+//     const name ="ck";
+//     console.log(name);
+// }
+    </script>
+    
+</body>
+</html>

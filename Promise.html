@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting
+        value.</p>
+    <script>
+        //Do an Async Task->  Db calls ,Networks ,Criptoghaphy
+        // const myPromise = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         console.log("Async task is complte");
+        //         resolve(); //this method connect with .then
+        //     }, 3000);
+        // });
+
+        // myPromise.then(() => {
+        //     console.log("Promise comsumed");
+        // })
+
+        // const dataValue = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         resolve({ Username: "Chandan", Email: "Ck1@gmail.com" })
+        //     }, 1000)
+        // })
+        // // Consumig of promises
+        // dataValue.then(function(user){
+        //     console.log(user);
+        // })
+
+
+        // const promise2 = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         let error = false;
+        //         if (!error) {
+        //             resolve({ Username: "Chandan", Email: "Ck1@gmail.com" })
+        //         }
+        //         else {
+        //             reject('Error:Something went Wrong')
+        //         }
+        //     }, 2000)
+        // })
+         // Consumig of promises
+        // promise2.then((user) => {
+        //     console.log(user);
+        //     return user.Username;
+        // }).catch((error) => {  //Here we doing chaining process 
+        //     console.log(error);
+        // }).then((Username) => {
+        //     console.log(Username);
+        // }).finally(()=> console.log("Promise either resolve or rejected:"))
+
+        //++++++++++++++ Same work usig Async and await+++++++++++++++
+
+        // const promise3 = new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         let error = false;
+        //         if (!error) {
+        //             resolve({ Username: "Chandan", Email: "Ck1@gmail.com" })
+        //         }
+        //         else {
+        //             reject('Error:Something went Wrong')
+        //         }
+        //     }, 2000)
+        // })
+        // async function Consumepromise3(){
+        //     try {
+        //         const response= await promise3;
+        //         console.log(response);                
+        //     } catch (error) {
+        //         console.log(error);               
+        //     }
+        // }
+        // Consumepromise3();
+        
+        // Fetch Api takes a promise and provide a promise that resolve the response. fetch() promises doesn't reject an HTTP error(404,etc).
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response)=>{
+            return response.json();
+        }).then((data)=>{
+            console.log(data);
+        }).catch((error)=>{
+            console.log("unable to fetch",error);
+        });
+        
+    </script>
+
+</body>
+
+</html>
