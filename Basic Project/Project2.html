@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Switcher</title>
+</head>
+<style>
+    .button {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 45px;
+    }
+
+    #grey {
+        background-color: gray;
+        width: 80px;
+        height: 80px;
+        border: 2px solid black;
+    }
+
+    #red {
+        background-color: red;
+        width: 80px;
+        height: 80px;
+        border: 2px solid black;
+    }
+
+    #white {
+        background-color: white;
+        width: 80px;
+        height: 80px;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+    <div class="button">
+        <h1>Color Scheme Switcher</h1>
+        <span id="grey"></span>
+        <span id="red"></span>
+        <span id="white"></span>
+        <span id="blue"></span>
+        <h2>Try clicking one of the above colors
+        </h2>
+        <span>To change the background color of the page</span>
+    </div>
+    <h2>Clock Time</h2>
+    <div id="clock"></div>
+
+</body>
+<script>
+    const buttons = document.querySelectorAll('.button')
+    const body = document.querySelector('body')
+
+    buttons.forEach((button)=> {
+        //console.log(button)
+        //Now apply Eventlitner on every button
+        button.addEventListener('click', function (e) {
+            //console.log(e)
+            console.log(e.target)
+            if (e.target.id === 'grey') {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id === 'red') {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id === 'white') {
+                body.style.backgroundColor = e.target.id
+            }
+
+        })
+    })
+
+    // Time Based Question->Make a Clock Which show Time
+    const clock = document.getElementById('clock');
+    // const clock = document.querySelector('#clock')
+
+    setInterval(function () {
+        let date = new Date();
+        // console.log(date.toLocaleTimeString());
+        clock.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+
+
+
+</script>
+
+</html>
