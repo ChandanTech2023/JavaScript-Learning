@@ -8,14 +8,17 @@
 body{
     background-color: #45e4e4;
     width: 100%;
-    /* height: 100vh; */
+    /* height: 44vh; */
 }
 .container{
     background-color: #fff;
-    max-width: 600px;
+    max-width: 700px;
+    min-height: 500px;
     position: relative;
-    transform: translate(50%,30%); 
-    padding: 11px 32px;
+    /* transform: translate(50%,-40%); */
+    margin: auto 24px; 
+    top: 40px;
+    padding: 10px 25px;
     border-radius: 15px;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
 }
@@ -24,6 +27,8 @@ h1{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    -webkit-text-fill-color: #046fb3;
+    text-shadow: 0 4px 0 rgba(19, 6, 199, 0.3);
 }
 h1 img{
     width: 30%;
@@ -48,11 +53,11 @@ h1 img{
 }
 
 .btn{
-    padding: 12px 22px;
+    padding: 18px 20px;
     margin: 10px;
     border: none;
     border-radius: 30px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     background-color: #43a0df;
     color: white;
@@ -70,7 +75,7 @@ ul li{
     padding: 12px 50px;
     border-radius: 25px;
     margin-block: 23px;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 18px;
     font-weight: 600;
     position: relative;
@@ -80,7 +85,7 @@ ul li{
 /* Use Suido class for check */
 ul li::before{
     content: " ";
-    background:url(./images/taskdone.png);
+    background:url(./images/undone.png);
     background-size: cover;
     position: absolute;
     width: 30px;
@@ -93,10 +98,31 @@ ul li::before{
     color:#fff;
 } 
 
-ul li::before{
-    background: url(./images/undone.png);
+.check::before{
+    background: url(./images/taskdone.png);
+    width: 30px;
+    height: 30px; 
+    background-size: cover;
+}
+
+span{
+    /* Because we need to set position created by js  */
+    position: absolute;
+    top: 8px;
+    right: 8px; 
+    font-size: 25px;
     width: 30px;
     height: 30px;
-    
-    background-size: cover;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* span:hover{
+    background-color: #45e4e4;
+    color: #ddd;
+} */
+ul li.check span:hover{
+    background-color: red;
+    color: #ddd;
 }
