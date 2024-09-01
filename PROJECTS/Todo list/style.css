@@ -87,4 +87,16 @@ ul li::before{
     height: 30px;
     top: 6px;
     left: 8px;
-}   
+}  
+.check{
+    background-color:#248ecf;
+    color:#fff;
+} 
+
+ul li::before{
+    background: url(./images/undone.png);
+    width: 30px;
+    height: 30px;
+    
+    background-size: cover;
+}
